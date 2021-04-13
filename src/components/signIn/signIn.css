@@ -1,0 +1,99 @@
+.signIn {
+  width: 400px;
+  height: 350px;
+  margin: -90px auto 0;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid gray; */
+  box-shadow: 2px 2px 4px 1px rgb(116, 115, 115);
+}
+
+form fieldset {
+  width: 400px;
+  height: 350px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+form fieldset h1 {
+  font-style: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  font-size: 37px;
+  margin-top: 15px;
+  margin-bottom: 31px;
+}
+
+form fieldset label {
+  font-style: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  color: black;
+}
+
+form fieldset input {
+  width: 220px;
+  height: 25px;
+  border: 1px solid black;
+  background: none;
+  color: rgb(37, 37, 37);
+  margin-bottom: 13px;
+}
+
+form fieldset input:hover {
+  border: 1px solid white;
+}
+
+form fieldset input[type="password"] {
+  margin-bottom: 0px;
+}
+
+small.smallPassword {
+  color: rgb(92, 91, 91);
+  font-style: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+small.smallPassword:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button {
+  line-height: 19px;
+  width: 110px;
+  height: 43px;
+  background: none;
+  border: 1px solid black;
+  font-style: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  margin: 25px 0px 5px;
+}
+
+.button:hover {
+  color: white;
+  box-shadow: 1px 1px 3px 1px rgb(150, 146, 146);
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.smallSignUp {
+  text-decoration: underline;
+}
+
+.smallSignUp:hover {
+  cursor: pointer;
+}

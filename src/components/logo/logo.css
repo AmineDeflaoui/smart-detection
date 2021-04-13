@@ -1,0 +1,19 @@
+.logo {
+  /* border: 1px solid green; */
+  position: relative;
+  top: -60px;
+  width: 120px;
+  height: 120px;
+  /* border: 1px solid red; */
+}
+
+.Tilt {
+  /* background: linear-gradient(89deg,#FF5EDF 0%, #04C8DE 100%); */
+  margin: 0px 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  /* border: 1px solid red; */
+}

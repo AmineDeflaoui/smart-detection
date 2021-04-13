@@ -1,0 +1,22 @@
+#container {
+  position: relative;
+  margin: 0 auto;
+  /* border: 1px solid green; */
+  width: 400px;
+  height: 350px;
+  top: -10px;
+}
+
+#imageContainer {
+  position: absolute;
+}
+
+#imageBox {
+  width: 400px;
+  height: 350px;
+}
+
+#boundingBox {
+  position: absolute;
+  /* border: 1px solid red; */
+}
