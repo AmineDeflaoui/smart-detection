@@ -69,7 +69,7 @@ class App extends React.Component {
   };
 
   onSubmit = () => {
-    console.log("URL : ", this.state.search);
+    // console.log("URL : ", this.state.search);
     this.setState({ urlImage: this.state.search });
     this.setState({ bounding_box: [0, 0, 0, 0] });
     const url = this.state.search;
@@ -82,46 +82,46 @@ class App extends React.Component {
     })
       .then((data) => data.json())
       .then((resp) => {
-        console.log("respond array : ", resp);
+        // console.log("respond array : ", resp);
         const coord = resp.output.faces[0].bounding_box;
-        const coordBox = [coord[0], coord[1], coord[2], coord[3]];
-        console.log("Final values : ", coordBox);
-        console.log("Xmin: ", coord[0]);
-        console.log("Ymin: ", coord[1]);
-        console.log("Xmax: ", coord[0] + coord[2]);
-        console.log("Ymax: ", coord[1] + coord[3]);
+        // const coordBox = [coord[0], coord[1], coord[2], coord[3]];
+        // console.log("Final values : ", coordBox);
+        // console.log("Xmin: ", coord[0]);
+        // console.log("Ymin: ", coord[1]);
+        // console.log("Xmax: ", coord[0] + coord[2]);
+        // console.log("Ymax: ", coord[1] + coord[3]);
         const fakeImage = document.getElementById("fakeImage");
         const fakeImageWidth = Number(fakeImage.width);
         const fakeImageheight = Number(fakeImage.height);
-        console.log(
-          "fake width & height : ",
-          fakeImageWidth,
-          " ",
-          fakeImageheight
-        );
+        // console.log(
+        //   "fake width & height : ",
+        //   fakeImageWidth,
+        //   " ",
+        //   fakeImageheight
+        // );
         const pourcertages = [
           coord[0] / fakeImageWidth,
           coord[1] / fakeImageheight,
           (coord[0] + coord[2]) / fakeImageWidth,
           (coord[1] + coord[3]) / fakeImageheight,
         ];
-        console.log("pourcentages are : ", pourcertages);
+        // console.log("pourcentages are : ", pourcertages);
 
         const Image = document.getElementById("imageBox");
         const ImageWidth = Number(Image.width);
         const ImageHeight = Number(Image.height);
-        console.log("image width & height : ", ImageWidth, " ", ImageHeight);
+        // console.log("image width & height : ", ImageWidth, " ", ImageHeight);
         var box = [
           ImageWidth * pourcertages[0],
           ImageHeight * pourcertages[1],
           ImageWidth * pourcertages[2],
           ImageHeight * pourcertages[3],
         ];
-        console.log("box : ", box);
+        // console.log("box : ", box);
         box[2] -= box[0];
         box[3] -= box[1];
         this.setState({ bounding_box: box });
-        console.log("Finale coordination : ", this.state.bounding_box);
+        // console.log("Finale coordination : ", this.state.bounding_box);
       })
       .then(
         setTimeout(() => {
@@ -138,60 +138,6 @@ class App extends React.Component {
             );
         }, 3500)
       );
-  };
-
-  afunc = () => {
-    const url = this.state.search;
-    fetch("http://localhost:3000/deepai", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        url: url,
-      }),
-    })
-      .then((data) => data.json())
-      .then((resp) => {
-        console.log("respond array : ", resp);
-        const coord = resp.output.faces[0].bounding_box;
-        const coordBox = [coord[0], coord[1], coord[2], coord[3]];
-        console.log("Final values : ", coordBox);
-        console.log("Xmin: ", coord[0]);
-        console.log("Ymin: ", coord[1]);
-        console.log("Xmax: ", coord[0] + coord[2]);
-        console.log("Ymax: ", coord[1] + coord[3]);
-        const fakeImage = document.getElementById("fakeImage");
-        const fakeImageWidth = Number(fakeImage.width);
-        const fakeImageheight = Number(fakeImage.height);
-        console.log(
-          "fake width & height : ",
-          fakeImageWidth,
-          " ",
-          fakeImageheight
-        );
-        const pourcertages = [
-          coord[0] / fakeImageWidth,
-          coord[1] / fakeImageheight,
-          (coord[0] + coord[2]) / fakeImageWidth,
-          (coord[1] + coord[3]) / fakeImageheight,
-        ];
-        console.log("pourcentages are : ", pourcertages);
-
-        const Image = document.getElementById("imageBox");
-        const ImageWidth = Number(Image.width);
-        const ImageHeight = Number(Image.height);
-        console.log("image width & height : ", ImageWidth, " ", ImageHeight);
-        var box = [
-          ImageWidth * pourcertages[0],
-          ImageHeight * pourcertages[1],
-          ImageWidth * pourcertages[2],
-          ImageHeight * pourcertages[3],
-        ];
-        console.log("box : ", box);
-        box[2] -= box[0];
-        box[3] -= box[1];
-        this.setState({ bounding_box: box });
-        console.log("Finale coordination : ", this.state.bounding_box);
-      });
   };
 
   pageChanger = (data) => {

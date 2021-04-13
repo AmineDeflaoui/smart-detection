@@ -39,7 +39,7 @@ class SignIn extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.length === 3) {
           this.setState({ signUpUserNameError: data[0] });
           this.setState({ signUpMailError: data[1] });

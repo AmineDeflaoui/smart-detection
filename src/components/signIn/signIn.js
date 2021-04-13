@@ -32,7 +32,7 @@ class SignIn extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data : ", data);
+        // console.log("data : ", data);
         if (data.length === 2) {
           this.setState({ signInMailError: data[0] });
           this.setState({ signInPasswordError: data[1] });
