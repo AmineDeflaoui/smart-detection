@@ -1,3 +1,67 @@
+.container {
+  position: relative;
+  top: -150px;
+  width: 600px;
+  margin: 0 auto;
+  height: 500px;
+  /* border: 1px solid red; */
+}
+
+.title {
+  margin-top: 65px;
+  margin-bottom: 110px;
+  font-family: "MyFont";
+  color: aliceblue;
+  font-size: 40px;
+}
+
+.footer {
+  position: relative;
+  top: 70px;
+  /* border: 1px solid green; */
+}
+
+.tooltiptext {
+  position: absolute;
+  bottom: 35px;
+  left: 73px;
+  z-index: 1;
+  margin-left: -47px;
+  margin-bottom: -15px;
+  visibility: hidden;
+  width: 90px;
+  font-size: 12px;
+  background-color: white;
+  color: #282c34;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px;
+}
+.spanHeart:hover .tooltiptext {
+  visibility: visible;
+}
+
+.spanHeart {
+  font-size: 19px;
+}
+.spanHeart:hover {
+  color: red;
+}
+
+.spanName {
+  color: aliceblue;
+}
+.spanName:hover {
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url(./fonts/Balgruf-d256.woff) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 .App {
   margin: 0;
   padding: 0;

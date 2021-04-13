@@ -164,10 +164,22 @@ class App extends React.Component {
             pageChangerClick={this.pageChanger}
           />
         ) : this.state.page === "signIn" ? (
-          <SignIn
-            loadUser={this.loadUser}
-            pageChangerClick={this.pageChanger}
-          />
+          <div className="container">
+            <h1 className="title">Smart AI Face Detection</h1>
+            <SignIn
+              loadUser={this.loadUser}
+              pageChangerClick={this.pageChanger}
+            />
+            <small className="footer">
+              Crafted with{" "}
+              <span className="spanHeart">
+                <span class="tooltiptext">My Priceless &#128525;</span>
+                &hearts;
+              </span>{" "}
+              by
+              <span className="spanName">Amine DEFLAOUI</span>
+            </small>
+          </div>
         ) : this.state.page === "mainPage" ? (
           <div>
             <Rank
